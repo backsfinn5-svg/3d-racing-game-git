@@ -1,0 +1,157 @@
+[gd_scene format=4 uid="uid://flupoq7a43a1"]
+
+[ext_resource type="Script" uid="uid://d07e4m3lv5ggx" path="res://car.gd" id="1_k61xc"]
+[ext_resource type="PackedScene" uid="uid://b10hn831k3sxy" path="res://wheel.glb" id="2_wheel"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_uoj53"]
+points = PackedVector3Array(0.9, 0.8499315, 1.9997962, 0.6998433, 1.45, 0.84967494, -0.9, 0.8499315, 1.9997962, 0.79992163, 0.7199687, 2.03, 0.9, 0.35, 1.9997962, 0.9, 0.8499315, -2.0001938, -0.7000196, 1.45, 0.84967494, 0.6998433, 1.45, -0.4502722, -0.9, 0.35, 1.9997962, -0.8000979, 0.7199687, 2.03, -0.9, 0.8499315, -2.0001938, 0.79992163, 0.5499511, 2.03, 0.9, 0.35, -2.0001938, 0.79992163, 0.7199687, -2.03, -0.7000196, 1.45, -0.4502722, -0.8000979, 0.5499511, 2.03, -0.9, 0.35, -2.0001938, -0.8000979, 0.7199687, -2.03, 0.79992163, 0.5499511, -2.03, -0.8000979, 0.5499511, -2.03)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r45lr"]
+resource_name = "Body"
+albedo_color = Color(0.42358288, 0.6651851, 0.9546871, 1)
+roughness = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_731lk"]
+resource_name = "Glass"
+albedo_color = Color(0.3133042, 0.3491902, 0.4100209, 1)
+roughness = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ybfse"]
+resource_name = "Headlight"
+albedo_color = Color(1, 0.97769153, 0.7977378, 1)
+roughness = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t70ml"]
+resource_name = "Taillight"
+albedo_color = Color(0.9546871, 0.24780053, 0.24780053, 1)
+roughness = 0.8
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_shi5c"]
+_surfaces = [{
+"aabb": AABB(-0.9, 0.35, -2, 1.8, 1.1, 4),
+"format": 34896613377,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIAAAAEAAEAAwACAAUABQACAAEABgAAAAMABgADAAUABgAEAAAABQABAAcABgAFAAcABwABAAQABwAEAAYACAAJAAoACwAIAAoACAAMAAkACwAKAA0ADQAKAAkADgAIAAsADgALAA0ADgAMAAgADQAJAA8ADgANAA8ADwAJAAwADwAMAA4A"),
+"lods": [0.9555763, PackedByteArray("AAABAAIAAwAAAAIAAAAEAAEAAwACAAUABQACAAEABgAAAAMABgADAAUABgAEAAAABQABAAcABgAFAAcABwABAAQABwAEAAYA")],
+"name": "Body",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAAAAAAAAAD//wAA//8AAP//AAAAAAAAAABcdAAAAAAAAAAA//8AAP//XHQAAAAAAABcdP//AAD//1x0//8AAHEcXPQyYwAAjeNc9GW2AACN41z0MmMAAHEc//8yYwAAcRxc9GW2AACN4///MmMAAHEc//9ltgAAjeP//2W2AAA=")
+}, {
+"aabb": AABB(-0.85, 0.85, -0.9, 1.7, 0.54999995, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIAAAAEAAEAAwACAAUABQACAAEABgAAAAMABgADAAUABgAEAAAABQABAAcABgAFAAcABwABAAQABwAEAAYA"),
+"name": "Glass",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAAAAAAD//wAA//8AAP//AAAAAAAAlhb//5k5AAAAAAAA//8AAGjp//+ZOQAAlhb////fAABo6f///98AAA==")
+}, {
+"aabb": AABB(-0.8, 0.55, -2.03, 1.6, 0.17000002, 0.029999971),
+"format": 34896613377,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIAAAAEAAEAAwACAAUABQACAAEABgAAAAMABgADAAUABgAEAAAABQABAAcABgAFAAcABwABAAQABwAEAAYACAAJAAoACwAIAAoACAAMAAkACwAKAA0ADQAKAAkADgAIAAsADgALAA0ADgAMAAgADQAJAA8ADgANAA8ADwAJAAwADwAMAA4A"),
+"name": "Headlight",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAAAAAAAAAD/JwAA//8AAP8nAAAAAAAAAAD//wAAAAAAAAAA//8AAP8n//8AAAAAAAD/////AAD/J/////8AAP/XAAAAAAAA//8AAP//AAD//wAAAAAAAP/X//8AAAAA/9cAAP//AAD/////AAAAAP/X/////wAA////////AAA=")
+}, {
+"aabb": AABB(-0.8, 0.55, 2, 1.6, 0.17000002, 0.029999971),
+"format": 34896613377,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIAAAAEAAEAAwACAAUABQACAAEABgAAAAMABgADAAUABgAEAAAABQABAAcABgAFAAcABwABAAQABwAEAAYACAAJAAoACwAIAAoACAAMAAkACwAKAA0ADQAKAAkADgAIAAsADgALAA0ADgAMAAgADQAJAA8ADgANAA8ADwAJAAwADwAMAA4A"),
+"name": "Taillight",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAAAAAAAAAD/JwAA//8AAP8nAAAAAAAAAAD//wAAAAAAAAAA//8AAP8n//8AAAAAAAD/////AAD/J/////8AAP/XAAAAAAAA//8AAP//AAD//wAAAAAAAP/X//8AAAAA/9cAAP//AAD/////AAAAAP/X/////wAA////////AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_f5r6k"]
+resource_name = "car_body_Body"
+_surfaces = [{
+"aabb": AABB(-0.9, 0.35, -2, 1.8, 1.1, 4),
+"format": 34896613383,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
+"lods": [0.9555763, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA")],
+"material": SubResource("StandardMaterial3D_r45lr"),
+"name": "Body",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AAAAAAAA/////wAA////////AAAAAP//AAAAAP////8AAFx0////////XHQAAP////9cdP////8AAFx0AAD//wAAXHQAAP////8AAAAA/////1x0AAD//wAAAAAAAP////9cdAAA/////wAA////////XHT///////8AAAAA/////1x0////vwAAAAD///+/AABcdP///7///wAA////vwAAXHT///+/AAAAAAAA/78AAFx0AAD/vwAAAAD///+/cRxc9DJj//+N41z0Zbb//43jXPQyY///cRxc9GW2//9xHP//Zbb//43j//8yY///jeP//2W2//9xHP//MmP//3Ec//8yY///jeNc9DJj//+N4///MmP//3EcXPQyY///jeP//zJj//+N41z0Zbb//43j//9ltv//jeNc9DJj//+N4///Zbb/v3EcXPRltv+/cRz//2W2/7+N41z0Zbb/v3Ec//9ltv+/cRxc9DJj/79xHP//MmP/v3EcXPRltv+//3//P/9//z//f/8//3//P/9//7//f/+//3//v/9//7//P/+//z//v/8//7//P/+//7//f/+//3//v/9//7//f/9//3//f/9//3//f/9//3//f////3////9/////f////3//P/9//z//f/8//3//P/9//7//f/+//3//v/9//7//P/+//z//v/8//7//P/+//7//f/+//3//v/9//7//f/9//3//f/9//3//f/9//3//f////3////9/////f///")
+}, {
+"aabb": AABB(-0.85, 0.85, -0.9, 1.7, 0.54999995, 2),
+"format": 34896613383,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_731lk"),
+"name": "Glass",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAAAA/////wAA////////AAAAAP//AAAAAP////+WFv///9///2jp//+ZOf//aOn////f//+WFv//mTn//5YW//+ZObDx//8AAAAAsPFo6f//mTmw8QAAAAAAALDxaOn//5k5uv///wAA//+6/2jp////37r///8AAAAAuv9o6f///98XyQAAAAD//xfJlhb////fF8n//wAA//8XyZYW////3+rCAAAAAAAA6sKWFv//mTnqwgAAAAD//+rC/3//P/9//z//f/8//3//P/9//7//f/+//3//v/9//7/cvpwn3L6cJ9y+nCfcvpwnWQ9HN1kPRzdZD0c3WQ9HN3eQ2pN3kNqTd5Dak3eQ2pOIf5zkiH+c5Ih/nOSIf5zk")
+}, {
+"aabb": AABB(-0.8, 0.55, -2.03, 1.6, 0.17000002, 0.029999971),
+"format": 34896613383,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
+"material": SubResource("StandardMaterial3D_ybfse"),
+"name": "Headlight",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AAAAAAAA////JwAA//////8nAAAAAP//AAAAAP////8AAP////////8n//8AAP///yf///////8AAP//AAD//wAA//8AAP///ycAAAAA////J///AAD//wAAAAAAAP///yf//wAA////JwAA//////8n/////////ycAAAAA////J///////vwAAAAD///+/AAD//////7//JwAA////vwAA//////+/AAAAAAAA/78AAP//AAD/vwAAAAD///+//9cAAAAA/////wAA////////AAAAAP///9cAAP//////1/////////////8AAP//////////////1///AAD////X//8AAP////8AAAAA////////AAD////XAAAAAP///////wAA/////wAA//////////////////8AAAAA////////////v//XAAD///+//9f//////7///wAA////v//X//////+//9cAAAAA/7//1///AAD/v//XAAD///+//3//P/9//z//f/8//3//P/9//7//f/+//3//v/9//7//P/+//z//v/8//7//P/+//7//f/+//3//v/9//7//f/9//3//f/9//3//f/9//3//f////3////9/////f////3//P/9//z//f/8//3//P/9//7//f/+//3//v/9//7//P/+//z//v/8//7//P/+//7//f/+//3//v/9//7//f/9//3//f/9//3//f/9//3//f////3////9/////f///")
+}, {
+"aabb": AABB(-0.8, 0.55, 2, 1.6, 0.17000002, 0.029999971),
+"format": 34896613383,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
+"material": SubResource("StandardMaterial3D_t70ml"),
+"name": "Taillight",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AAAAAAAA////JwAA//////8nAAAAAP//AAAAAP////8AAP////////8n//8AAP///yf///////8AAP//AAD//wAA//8AAP///ycAAAAA////J///AAD//wAAAAAAAP///yf//wAA////JwAA//////8n/////////ycAAAAA////J///////vwAAAAD///+/AAD//////7//JwAA////vwAA//////+/AAAAAAAA/78AAP//AAD/vwAAAAD///+//9cAAAAA/////wAA////////AAAAAP///9cAAP//////1/////////////8AAP//////////////1///AAD////X//8AAP////8AAAAA////////AAD////XAAAAAP///////wAA/////wAA//////////////////8AAAAA////////////v//XAAD///+//9f//////7///wAA////v//X//////+//9cAAAAA/7//1///AAD/v//XAAD///+//3//P/9//z//f/8//3//P/9//7//f/+//3//v/9//7//P/+//z//v/8//7//P/+//7//f/+//3//v/9//7//f/9//3//f/9//3//f/9//3//f////3////9/////f////3//P/9//z//f/8//3//P/9//7//f/+//3//v/9//7//P/+//z//v/8//7//P/+//7//f/+//3//v/9//7//f/9//3//f/9//3//f/9//3//f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_shi5c")
+
+[node name="Car" type="RigidBody3D" unique_id=299558499]
+mass = 800.0
+script = ExtResource("1_k61xc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1380824716]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_uoj53")
+
+[node name="Body" type="Node3D" parent="." unique_id=705861866]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Body" type="MeshInstance3D" parent="Body" unique_id=193514924]
+mesh = SubResource("ArrayMesh_f5r6k")
+
+[node name="RL" type="Node3D" parent="." unique_id=1392134004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 0.38, -1.25)
+
+[node name="Mesh" parent="RL" unique_id=513071500 instance=ExtResource("2_wheel")]
+
+[node name="RR" type="Node3D" parent="." unique_id=902245381]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 0.38, -1.25)
+
+[node name="Mesh" parent="RR" unique_id=415381771 instance=ExtResource("2_wheel")]
+
+[node name="FL" type="Node3D" parent="." unique_id=2004664234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 0.38, 1.25)
+
+[node name="Mesh" parent="FL" unique_id=505430009 instance=ExtResource("2_wheel")]
+
+[node name="FR" type="Node3D" parent="." unique_id=1020371893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 0.38, 1.25)
+
+[node name="Mesh" parent="FR" unique_id=609049001 instance=ExtResource("2_wheel")]
